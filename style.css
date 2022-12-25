@@ -1,0 +1,19 @@
+/* div{
+    color: blue;
+}
+
+#username{
+    font-size:x-small;
+    
+}
+
+.para{
+    border: 8px solid yellow;
+} */
+
+
+div{
+    padding: 16px;
+    border: 9px solid;
+    margin: 30px;
+}

@@ -7,14 +7,13 @@ return currentItem*2;
 })
 
 
-console.log(arrmap);
-console.log(arry);
+function functionabc(){
+console.log('clicking is working');
+}
 
+let btn = document.querySelector("button")
+if(btn){
 
+    btn.addEventListener("click", functionabc)
+}
 
-var arrsort  = [2,20,40,54,80,100,42,23];
-var pointsort = arrsort.sort(function(a,b){
-return a-b;
-})
-
-console.log(pointsort)
