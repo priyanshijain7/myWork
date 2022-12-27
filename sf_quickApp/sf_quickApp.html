@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="quiz app">
+      <div class=" slds-m-around_medium">
+        <form>
+          <template for:each={myQuestion} for:item="Quiz">
+            <div key={Quiz.id} class="slds-m-bottom_medium">
+              <div>
+                <strong>{Quiz.id}) {Quiz.question}</strong>
+              </div>
+              <div class="slds-grid slds-gutters slds-p-bottom_medium">
+                <div class="slds-col ">
+                  <input type="radio" name={Quiz.id} value="a" onchange={changeHandler} /> {Quiz.answere.a}
+                </div>
+                <div class="slds-col ">
+                  <input type="radio" name={Quiz.id} value="b" onchange={changeHandler} /> {Quiz.answere.b}
+                </div>
+                <div class="slds-col ">
+                  <input type="radio" name={Quiz.id} value="c" onchange={changeHandler} /> {Quiz.answere.c}
+                </div>
+                <div class="slds-col ">
+                  <input type="radio" name={Quiz.id} value="d" onchange={changeHandler} /> {Quiz.answere.d}
+                </div>
+              </div>
+            </div>
+          </template>
+          <lightning-button variant="brand" type="submit" label="Submit" title="Submit quiz" disabled={allNotSelected} class=" slds-m-around_small" onclick={submitHandler}></lightning-button>
+          <lightning-button variant="brand" type="reset" label="Reset" title="Reset quiz" class=" slds-m-around_small" onclick={resetHandler}></lightning-button>
+        </form>
+        <template if:true={isSubmited}>
+          <div class={isScoredFull}> You Have Scored {correctAnsweres} out of {totalQuestions}</div>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
